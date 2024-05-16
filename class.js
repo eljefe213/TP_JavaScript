@@ -25,3 +25,52 @@ class Square extends Rectangle {
                 super(width, width)
             }
 }
+
+// class Book et class Library 
+
+ class Book {
+
+            #page = 1
+
+            constructor(title, pages) {
+                 this.title = title
+                 this.pages = pages
+                 
+            }
+
+            get page () {
+                return this.#page
+            }
+
+            nextPage () {
+                if (this.#page < this.pages) {
+                    this.#page++
+                }
+            }
+
+            close () {
+                this.#page = 1
+            }
+
+
+}
+
+class Library {
+
+            #books = []
+
+            addBook () {
+                this.#books.push(book)
+            }
+
+            addBooks (books) {
+                for (let book of books) {
+                    this.addBook(book)
+                }
+            }
+
+            findBooksByLetter (letter) {
+                return this.#books.filter((book) => book.title[0].toLowerCase() === letter.toLowerCase()
+                )
+            }
+}
